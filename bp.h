@@ -4,6 +4,7 @@
 class BPNeuralNetwork{
 
 private:
+    //adada
 
 	/*Dataset Para*/
 	int Data;
