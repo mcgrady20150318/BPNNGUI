@@ -1,10 +1,11 @@
 #ifndef BP_H
 #define BP_H
 
+#include "para.h"
+
 class BPNeuralNetwork{
 
 private:
-    //dsflfl
 
 	/*Dataset Para*/
 	int Data;
@@ -65,7 +66,9 @@ private:
 
 public:
 
-	BPNeuralNetwork(int,int,int,int,int,int,double,int,double);
+    //BPNeuralNetwork(int,int,int,int,int,int,double,int,double);
+
+    BPNeuralNetwork(Para);
 
 	~BPNeuralNetwork();
 

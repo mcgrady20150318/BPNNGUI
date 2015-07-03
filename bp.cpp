@@ -9,9 +9,27 @@
 
 using namespace std;
 
-BPNeuralNetwork::BPNeuralNetwork(int d,int traindata,int testdata,int in,int neuron,int out,double alpha,int epo,double endaccuracy): Data(d), TrainData(traindata),TestData(testdata),In(in),Neuron(neuron),Out(out),LearningRate(alpha),Epochs(epo),EndAccuracy(endaccuracy){
-
+//BPNeuralNetwork::BPNeuralNetwork(int d,int traindata,int testdata,int in,int neuron,int out,double alpha,int epo,double endaccuracy): Data(d), TrainData(traindata),TestData(testdata),In(in),Neuron(neuron),Out(out),LearningRate(alpha),Epochs(epo),EndAccuracy(endaccuracy){
+BPNeuralNetwork::BPNeuralNetwork(Para para){
     //Para p -> input parameters
+
+    Data = para.Data;
+
+    TrainData = para.TrainData;
+
+    TestData = para.TestData;
+
+    In = para.In;
+
+    Neuron = para.Neuron;
+
+    Out = para.Out;
+
+    LearningRate = para.LearningRate;
+
+    Epochs = para.Epochs;
+
+    EndAccuracy = para.EndAccuracy;
 
 	int i,j;
 

@@ -34,7 +34,8 @@ void WorkerThread::run(){
     QByteArray f4 = para.logFilename.toLatin1();
     logFilePath = f4.data();
 
-    BPNeuralNetwork bpnn(para.Data,para.TrainData,para.TestData,para.In,para.Neuron,para.Out,para.LearningRate,para.Epochs,para.EndAccuracy);
+    //BPNeuralNetwork bpnn(para.Data,para.TrainData,para.TestData,para.In,para.Neuron,para.Out,para.LearningRate,para.Epochs,para.EndAccuracy);
+    BPNeuralNetwork bpnn(para);
 
     bpnn.loadData(inputFilePath);
 
