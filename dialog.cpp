@@ -7,7 +7,7 @@ Dialog::Dialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QStandardItemModel  *model = new QStandardItemModel();
+    model = new QStandardItemModel();
 
     model->setColumnCount(1);
 
@@ -19,7 +19,8 @@ Dialog::Dialog(QWidget *parent) :
 
          model->setItem(i-1,0,new QStandardItem(QString::fromLocal8Bit("哈哈")));
 
-     }
+    }
+
 
 }
 
@@ -30,5 +31,16 @@ Dialog::~Dialog()
 
 void Dialog::on_generateBtn_clicked()
 {
-    exit(1);
+
+    close();
+
+}
+
+void Dialog::on_DeleteBtn_clicked()
+{
+
+    int curRow = ui->tableView->currentIndex().row();
+
+    model->removeRow(curRow);
+
 }

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>324</width>
+    <width>384</width>
     <height>552</height>
    </rect>
   </property>
@@ -18,22 +18,35 @@
     <rect>
      <x>40</x>
      <y>20</y>
-     <width>121</width>
-     <height>511</height>
+     <width>301</width>
+     <height>411</height>
     </rect>
    </property>
   </widget>
   <widget class="QPushButton" name="generateBtn">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>20</y>
+     <x>220</x>
+     <y>450</y>
      <width>115</width>
-     <height>511</height>
+     <height>101</height>
     </rect>
    </property>
    <property name="text">
     <string>Generate</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="DeleteBtn">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>450</y>
+     <width>115</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete</string>
    </property>
   </widget>
  </widget>

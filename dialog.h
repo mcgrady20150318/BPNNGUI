@@ -19,8 +19,11 @@ public:
 private slots:
     void on_generateBtn_clicked();
 
+    void on_DeleteBtn_clicked();
+
 private:
     Ui::Dialog *ui;
+    QStandardItemModel *model;
 };
 
 #endif // DIALOG_H
