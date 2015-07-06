@@ -9,6 +9,8 @@
 
 using namespace std;
 
+BPNeuralNetwork::BPNeuralNetwork(){}
+
 //BPNeuralNetwork::BPNeuralNetwork(int d,int traindata,int testdata,int in,int neuron,int out,double alpha,int epo,double endaccuracy): Data(d), TrainData(traindata),TestData(testdata),In(in),Neuron(neuron),Out(out),LearningRate(alpha),Epochs(epo),EndAccuracy(endaccuracy){
 BPNeuralNetwork::BPNeuralNetwork(Para para){
     //Para p -> input parameters
@@ -30,6 +32,8 @@ BPNeuralNetwork::BPNeuralNetwork(Para para){
     Epochs = para.Epochs;
 
     EndAccuracy = para.EndAccuracy;
+
+    Momentum = para.Momentum;
 
 	int i,j;
 
@@ -502,7 +506,7 @@ void BPNeuralNetwork::backUpdate(int var){
 
 	double sum;
 
-	//double Beta = 0.4;
+    //double Momentum = 0.4;
 
 	for(i = 0; i < Neuron; i++){
 
@@ -513,7 +517,7 @@ void BPNeuralNetwork::backUpdate(int var){
 
             sum += (OutputData[j] - d_out_train[var][j]) * v[i][j];
 
-            dv[i][j] = LearningRate * (OutputData[j] - d_out_train[var][j]) * o[i] ;//+ Beta * dv[i][j];
+            dv[i][j] = LearningRate * (OutputData[j] - d_out_train[var][j]) * o[i] + Momentum * dv[i][j];
 
             v[i][j] -= dv[i][j];
 
@@ -523,7 +527,7 @@ void BPNeuralNetwork::backUpdate(int var){
 
 		for(j = 0; j < In; j++){
 
-            dw[j][i] = LearningRate * sum * o[i] * (1 - o[i]) * d_in_train[var][j];//+ Beta * dw[j][i];//momentum term;
+            dw[j][i] = LearningRate * sum * o[i] * (1 - o[i]) * d_in_train[var][j] + Momentum * dw[j][i];//momentum term;
 
             w[j][i] -= dw[j][i];
 
@@ -556,7 +560,6 @@ void BPNeuralNetwork::trainBPNetwork(char* filename){
     double AverageTrainMSE = 0.0;
     double AverageTestMSE = 0.0;
     double AverageCost = 0.0;
-
 
     for(TestDataGroup = 1;TestDataGroup <= 10;TestDataGroup++){
 
@@ -617,6 +620,8 @@ void BPNeuralNetwork::trainBPNetwork(char* filename){
                 logfile<<"========================================================="<<endl;
 
             }
+
+               // emit emitLog("Test dataset is group :");
 
                 cout<<"Test dataset is group " << TestDataGroup << endl;
 

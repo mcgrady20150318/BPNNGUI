@@ -17,16 +17,13 @@ private:
 	int Neuron;
 	int Out;
 	double LearningRate;//learning rate
+    double Momentum;
 
 	/*End Para*/
 	int Epochs;
 	double EndAccuracy; //accuarcy
 
 	/*Data Array*/
-	//double data[Data][In+Out];
-	//double d_in_train[TrainData][In],d_out_train[TrainData][Out],w[Neuron][In],v[Out][Neuron],dw[Neuron][In],dv[Out][Neuron];
-	//double o[Neuron],OutputData[TrainData],Minin[In],Maxin[In],Minout[Out],Maxout[Out];
-	//double d_in_test[TestData][In],d_out_test[TestData][Out];
 	double** data;
 	double** d_in_train;
 	double** d_out_train;
@@ -45,28 +42,29 @@ private:
 	double* Minout;
 	double* Maxout;
 
-    void splitData(int);
+    inline void splitData(int);
 
-	double fnet(double);
+    inline double fnet(double);
 
-	void computeO(int);
+    inline void computeO(int);
 
-	void backUpdate(int);
+    inline void backUpdate(int);
 
-	double predict(int);
+    inline double predict(int);
 
-	double computeTestMSE();
+    inline double computeTestMSE();
 
-	double computeTestAccuracy();
+    inline double computeTestAccuracy();
 
-	double computeTestCost();
+    inline double computeTestCost();
 
-	double computeTestRecallAndPrecision(char*);
+    inline double computeTestRecallAndPrecision(char*);
 
 
 public:
 
     //BPNeuralNetwork(int,int,int,int,int,int,double,int,double);
+    BPNeuralNetwork();
 
     BPNeuralNetwork(Para);
 
@@ -79,6 +77,10 @@ public:
     void trainBPNetwork(char*);
 
     void writeNeuron(char*,char*);
+
+//signals:
+
+   // void emitLog(QString);
 
 
 

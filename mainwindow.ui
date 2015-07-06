@@ -17,9 +17,9 @@
    <widget class="QPushButton" name="RunBtn">
     <property name="geometry">
      <rect>
-      <x>620</x>
+      <x>770</x>
       <y>370</y>
-      <width>301</width>
+      <width>151</width>
       <height>111</height>
      </rect>
     </property>
@@ -130,13 +130,13 @@
       <string>Network Para</string>
      </property>
     </widget>
-    <widget class="QSplitter" name="splitter_29">
+    <widget class="QSplitter" name="splitter_15">
      <property name="geometry">
       <rect>
        <x>30</x>
        <y>50</y>
-       <width>211</width>
-       <height>123</height>
+       <width>210</width>
+       <height>131</height>
       </rect>
      </property>
      <property name="orientation">
@@ -185,6 +185,17 @@
        </property>
       </widget>
       <widget class="QLineEdit" name="LREdit"/>
+     </widget>
+     <widget class="QSplitter" name="splitter_14">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <widget class="QLabel" name="label_30">
+       <property name="text">
+        <string>Momentum</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="MomentumEdit"/>
      </widget>
     </widget>
    </widget>
@@ -260,7 +271,7 @@
    <widget class="QFrame" name="frame_4">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>320</x>
       <y>280</y>
       <width>271</width>
       <height>201</height>
@@ -285,19 +296,19 @@
       <string>File Para</string>
      </property>
     </widget>
-    <widget class="QSplitter" name="splitter_25">
+    <widget class="QSplitter" name="splitter_13">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>50</y>
-       <width>231</width>
-       <height>123</height>
+       <y>51</y>
+       <width>233</width>
+       <height>121</height>
       </rect>
      </property>
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <widget class="QSplitter" name="splitter_26">
+     <widget class="QSplitter" name="splitter_12">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -307,8 +318,13 @@
        </property>
       </widget>
       <widget class="QLineEdit" name="InputFileEdit"/>
+      <widget class="QToolButton" name="toolButton">
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
      </widget>
-     <widget class="QSplitter" name="splitter_27">
+     <widget class="QSplitter" name="splitter_11">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -318,8 +334,13 @@
        </property>
       </widget>
       <widget class="QLineEdit" name="WEdit"/>
+      <widget class="QToolButton" name="toolButton_2">
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
      </widget>
-     <widget class="QSplitter" name="splitter_28">
+     <widget class="QSplitter" name="splitter_10">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -329,8 +350,13 @@
        </property>
       </widget>
       <widget class="QLineEdit" name="VEdit"/>
+      <widget class="QToolButton" name="toolButton_3">
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
      </widget>
-     <widget class="QSplitter" name="splitter_30">
+     <widget class="QSplitter" name="splitter_9">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -340,6 +366,11 @@
        </property>
       </widget>
       <widget class="QLineEdit" name="LogEdit"/>
+      <widget class="QToolButton" name="toolButton_4">
+       <property name="text">
+        <string>...</string>
+       </property>
+      </widget>
      </widget>
     </widget>
    </widget>
@@ -351,6 +382,19 @@
       <width>301</width>
       <height>321</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>620</x>
+      <y>370</y>
+      <width>151</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ChooseData</string>
     </property>
    </widget>
   </widget>

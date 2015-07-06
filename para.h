@@ -19,6 +19,7 @@ public:
     int Neuron;
     int Out;
     double LearningRate;//learning rate
+    double Momentum;//Momentum Term
 
     /*End Para*/
     int Epochs;

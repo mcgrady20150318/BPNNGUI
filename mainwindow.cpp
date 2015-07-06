@@ -37,11 +37,13 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->LREdit->setText("0.3");
 
+    ui->MomentumEdit->setText("0.3");
+
     /*Train End Para*/
 
     ui->EpochsEdit->setText("1000");
 
-    ui->AccuracyEdit->setText("0.95");
+    ui->AccuracyEdit->setText("0.90");
 
     /*File Para*/
 
@@ -60,6 +62,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(this,SIGNAL(emitPara(Para)),&worker,SLOT(updatePara(Para)));
 
     connect(&worker,SIGNAL(emitFinished()),this,SLOT(updateBtnStatus()));
+
+   // connect(&bp,SIGNAL(emitLog(QString)),this,SLOT(updateStatus(QString)));
 
 }
 
@@ -82,6 +86,7 @@ void MainWindow::on_RunBtn_clicked()
     int Neuron = ui->NeuronEdit->text().toInt();
     int Out = ui->OutEdit->text().toInt();
     double LearningRate = ui->LREdit->text().toDouble();
+    double Momentum = ui->MomentumEdit->text().toDouble();
 
     /*Train End Para*/
 
@@ -103,6 +108,7 @@ void MainWindow::on_RunBtn_clicked()
     para.Neuron = Neuron;
     para.Out = Out;
     para.LearningRate = LearningRate;
+    para.Momentum = Momentum;
 
     para.Epochs = Epochs;
     para.EndAccuracy = EndAccuracy;
@@ -120,6 +126,40 @@ void MainWindow::on_RunBtn_clicked()
 
 }
 
+QString MainWindow::ChooseFile(QString filename){
+
+    QFileDialog *fd = new QFileDialog(this,tr("Choose Dataset File"), "/Users/Zhangjun/Documents/C++Work/BPNN/data","" );
+
+    fd->setFileMode(QFileDialog::ExistingFile);
+
+    fd->setViewMode(QFileDialog::Detail);
+
+    QStringList filters;
+
+    filters << "*.csv" << "*.dat" << "*.txt" << "*.*";
+
+    fd->setNameFilters(filters);
+
+    QStringList fileNamesList;
+
+    if(fd->exec()) // ok
+    {
+
+            fileNamesList = fd->selectedFiles();
+
+            QString fileName = fileNamesList.at(0).toLocal8Bit().constData();
+
+            return fileName;
+
+    }else{
+
+        return filename;
+
+    }
+
+
+}
+
 void MainWindow::updateStatus(QString str){
 
     ui->StatusOutput->setText(str);
@@ -132,3 +172,36 @@ void MainWindow::updateBtnStatus(){
 
 }
 
+
+void MainWindow::on_toolButton_clicked()
+{
+
+    ui->InputFileEdit->setText(ChooseFile(ui->InputFileEdit->text()));
+
+}
+
+void MainWindow::on_toolButton_2_clicked()
+{
+
+    ui->WEdit->setText(ChooseFile(ui->WEdit->text()));
+
+}
+
+void MainWindow::on_toolButton_3_clicked()
+{
+    ui->VEdit->setText(ChooseFile(ui->VEdit->text()));
+
+}
+
+void MainWindow::on_toolButton_4_clicked()
+{
+    ui->LogEdit->setText(ChooseFile(ui->LogEdit->text()));
+
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    dialog.show();
+
+    dialog.exec();
+}
