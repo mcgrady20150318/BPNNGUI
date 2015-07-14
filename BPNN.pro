@@ -16,15 +16,12 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     para.cpp \
     workerthread.cpp \
-    bp.cpp \
-    dialog.cpp
+    bp.cpp
 
 HEADERS  += mainwindow.h \
     para.h \
     workerthread.h \
-    bp.h \
-    dialog.h
+    bp.h
 
 
-FORMS    += mainwindow.ui \
-    dialog.ui
+FORMS    += mainwindow.ui

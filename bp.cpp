@@ -603,7 +603,7 @@ void BPNeuralNetwork::trainBPNetwork(char* filename){
 
             }else{
 
-                logfile<<"Test dataset is group " << TestDataGroup << endl;
+        /*        logfile<<"Test dataset is group " << TestDataGroup << endl;
 
                 logfile<<"Train dataset MSE = "<< trainError << ",Step = "<< count + 1<<endl;
 
@@ -617,7 +617,7 @@ void BPNeuralNetwork::trainBPNetwork(char* filename){
 
                 logfile<<"Test dataset Precision = "<< precision << ",Step = "<< count + 1 <<endl;
 
-                logfile<<"========================================================="<<endl;
+                logfile<<"========================================================="<<endl;*/
 
             }
 

@@ -199,9 +199,3 @@ void MainWindow::on_toolButton_4_clicked()
 
 }
 
-void MainWindow::on_pushButton_clicked()
-{
-    dialog.show();
-
-    dialog.exec();
-}
