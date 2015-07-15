@@ -667,6 +667,8 @@ void BPNeuralNetwork::trainBPNetwork(char* filename){
 
         logfile << "Learning Rate : " << LearningRate << endl;
 
+        logfile << "Momentum : " << Momentum << endl;
+
         logfile << "Ending Epochs : " << Epochs << endl;
 
         logfile << "Ending Accuracy : " << EndAccuracy << endl;
